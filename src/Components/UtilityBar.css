@@ -1,0 +1,21 @@
+.header{
+    position: fixed;
+    top: 40vh;
+    left: -40px;
+    padding: 10px;
+    font-weight: 500;
+    color: #000;
+    transform: rotate(-90deg);
+}
+
+.header img{
+    width: 25px;
+    display: inline-block;
+    transform: translate(-10px, 7px) rotate(90deg);
+    opacity: 0.6;
+    transition: opacity 0.8s ease;
+}
+
+.header img:hover{
+    opacity: 0.9;
+}
