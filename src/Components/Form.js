@@ -56,10 +56,10 @@ export default class Form extends React.Component{
                     </div>
 
                     <div className="input-group">
-                        <input className="date start-date" onChange={this.handleChange} placeholder="Start Date" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
+                        <input className="date start-date" onChange={this.handleChange} placeholder="Start Date" ref="startDateField" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
                     </div>
                     <div className="input-group">
-                        <input className="date end-date" onChange={this.handleChange} placeholder="End Date" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
+                        <input className="date end-date" onChange={this.handleChange} placeholder="End Date" ref="endDateField" type="text" onFocus = {this._onFocus} onBlur={this._onBlur}/>
                     </div>
                     <br/>
 

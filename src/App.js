@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Form from "./Components/Form.js";
-import Title from "./Components/UtilityBar";
+import {Title, Profiles} from "./Components/UtilityBar";
 
 import './App.css';
 
@@ -13,8 +13,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-              <Title/>
-              <Form/>
+                <Title/>
+                <Form/>
+                <Profiles/>
             </div>
         );
     }
