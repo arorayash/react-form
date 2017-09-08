@@ -5,6 +5,7 @@
     padding: 20px;
     font-weight: 500;
     color: #000;
+    background: #fff;
     transform: rotate(-90deg);
     transition: all 0.8s ease;
     box-shadow: 0 0 13px -3px rgba(179,179,179,0.48);
@@ -16,9 +17,11 @@
 }
 
 .header-right{
+    background: #fff;
     position: fixed;
     top: 34vh;
     right: 0px;
+    z-index: -1;
     box-shadow: 0 0 13px -3px rgba(179,179,179,0.48);
     padding: 20px 0;
 }
@@ -38,6 +41,6 @@ a{
     text-decoration: none;
 }
 
-a:hover{
-
+a:hover, a:visited{
+    text-decoration: none;
 }
