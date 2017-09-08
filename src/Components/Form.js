@@ -17,8 +17,8 @@ export default class Form extends React.Component{
             name: "",
             value: "0",
             valueWarn: false,
-            startDate: null,
-            endDate: null,
+            startDate: "",
+            endDate: "",
             dateWarn: false
         }
 
@@ -30,6 +30,7 @@ export default class Form extends React.Component{
         this._onBlur = this._onBlur.bind(this);
 
         this.showValueErrors = this.showValueErrors.bind(this);
+        this.checkDateError = this.checkDateError.bind(this);
         this.showDateErrors = this.showDateErrors.bind(this);
     }
 
@@ -49,6 +50,10 @@ export default class Form extends React.Component{
         }
     }
 
+    checkValueErrors(){
+
+    }
+
     showValueErrors(){
         let Warn;
         if(this.state.valueWarn === true)
@@ -66,24 +71,61 @@ export default class Form extends React.Component{
 
     _onBlur(e){
         if(e.target.name === "startDateField")
+        {
             this.setState({
                 startDate: e.target.value
-            });
+            }, () =>  this.checkDateError());
+        }
 
-        let date = new Date(e.target.value);
-        console.log(date.getTime());
-        if(e.target.name === "endDateField" && this.state.startDate !== null)
-            alert("end date");
+        if(e.target.name === "endDateField")
+        {
+            this.setState({
+                endDate: e.target.value
+            }, () => this.checkDateError());
+        }
 
-        e.currentTarget.type = "text";
+        //console.log(date.getTime());
+
+        if(e.target.value == "")
+            e.currentTarget.type = "text";
+    }
+
+    checkDateError(){
+        if(this.state.startDate == null || this.state.endDate == null)
+            return;
+
+        let startdate = new Date(this.state.startDate);
+        let enddate = new Date(this.state.endDate);
+        if(startdate > enddate)
+        {
+            this.setState({dateWarn:true});
+            return true;
+        }
+        else
+        {
+            this.setState({dateWarn:false});
+            return false;
+        }
     }
 
     showDateErrors(){
-
+        let Warn;
+        if(this.state.dateWarn === true)
+        {
+            Warn = <Tooltip text="Incorrect Date Range"/>
+        } else {
+            Warn = null;
+        }
+        return Warn;
     }
 
-    handleSubmit(){
-        alert("No Errors!");
+    handleSubmit(e){
+        e.preventDefault();
+        var dateErrors = this.checkDateError();
+        if((this.state.name == "" || this.state.startDate == "" || this.state.endDate == "" || this.state.value > 100 || this.state.value < 0) || this.state.valueWarn === true || dateErrors === true)
+            alert("Errors!");
+        else
+            alert("Submitted the form");
     }
 
     render() {
@@ -97,17 +139,6 @@ export default class Form extends React.Component{
                                onBlur={this.handleNameChange}
                                placeholder="Name"
                                type="text"/>
-                    </div>
-                    <div className="input-group">
-                        <input className="value"
-                               onChange={this.handleValueChange}
-                               placeholder="Value(1-100)"
-                               min={0}
-                               max={100}
-                               ref="valueField"
-                               type="number"
-                               data-tip='custom show'/>
-                        {valueWarn}
                     </div>
                     <div className="input-group">
                         <input className="date start-date"
@@ -127,6 +158,17 @@ export default class Form extends React.Component{
                                onFocus = {this._onFocus}
                                onBlur={this._onBlur}/>
                         {dateWarn}
+                    </div>
+                    <div className="input-group">
+                        <input className="value"
+                               onChange={this.handleValueChange}
+                               placeholder="Value(1-100)"
+                               min={0}
+                               max={100}
+                               ref="valueField"
+                               type="number"
+                               data-tip='custom show'/>
+                        {valueWarn}
                     </div>
                     <br/>
                     <Plot percentageValue={this.state.value}/>
