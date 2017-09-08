@@ -9,7 +9,8 @@
     position: relative;
     padding: 80px 10px;
     box-sizing: border-box;
-    box-shadow: 0px 5px 26px -2px rgba(227,227,227,1);
+    box-shadow: 0 5px 26px -2px rgba(227,227,227,1);
+    border-top: 1px solid #0000ff;
 }
 
 input{
@@ -32,6 +33,35 @@ input::placeholder{
     font-family: 'Roboto Mono', sans-serif;
 }
 
+.__react_component_tooltip{
+    opacity: 1!important;
+    visibility: visible!important;
+}
+
+.warning-message{
+    display: inline-block;
+    position: fixed;
+    font-size: 13px;
+    pointer-events: none;
+    z-index: 999;
+    padding: 8px 21px;
+    background: #ffa5a5;
+    margin: 10px 0 0 10px;
+}
+
+.warning-message::after{
+    content: '';
+    position: absolute;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    left: -6px;
+    top: 50%;
+    margin-top: -4px;
+    border-right-color: #ffa5a5;
+    border-right-style: solid;
+    border-right-width: 6px;
+}
+
 .button{
     border: 1px solid #1a1a1a;
     text-align: center;
@@ -48,7 +78,8 @@ input::placeholder{
 
 .button:hover{
     color: #ffffff;
-    box-shadow: inset 150px 0 0 0px #0000ff;
+    box-shadow: inset 150px 0 0 0 #0000ff;
+    border: 1px solid #0000ff;
 }
 
 .submit{
