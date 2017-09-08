@@ -48,7 +48,6 @@
     height: 2.5rem;
     overflow: hidden;
     text-align: center;
-    color: #c6e8d7;
     position: absolute;
     top: calc((100% - var(--fontSize))/2);
     left: 0;
@@ -61,6 +60,7 @@
     font-size: var(--fontSize);
     line-height: var(--fontSize);
     left: -22px;
+    color: #0000ff;
     position: relative;
 }
 

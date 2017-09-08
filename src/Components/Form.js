@@ -96,7 +96,7 @@ export default class Form extends React.Component{
 
         let startdate = new Date(this.state.startDate);
         let enddate = new Date(this.state.endDate);
-        if(startdate > enddate)
+        if(startdate >= enddate)
         {
             this.setState({dateWarn:true});
             return true;
@@ -123,9 +123,9 @@ export default class Form extends React.Component{
         e.preventDefault();
         var dateErrors = this.checkDateError();
         if((this.state.name == "" || this.state.startDate == "" || this.state.endDate == "" || this.state.value > 100 || this.state.value < 0) || this.state.valueWarn === true || dateErrors === true)
-            alert("Errors!");
+            alert("Form details are invalid.");
         else
-            alert("Submitted the form");
+            alert("Form details are valid.");
     }
 
     render() {
