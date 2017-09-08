@@ -228,7 +228,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504629161134</updated>
-      <workItem from="1504629162689" duration="29998000" />
+      <workItem from="1504629162689" duration="30080000" />
     </task>
     <task id="LOCAL-00001" summary="create-react-app boilerplate">
       <created>1504630080031</created>
@@ -272,11 +272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504859822113</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added date validation">
+      <created>1504859886823</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1504859886823</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29998000" />
+    <option name="totallyTimeSpent" value="30080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="782" y="23" width="898" height="970" extended-state="0" />
@@ -422,6 +429,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
