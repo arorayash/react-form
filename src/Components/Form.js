@@ -40,7 +40,11 @@ export default class Form extends React.Component{
 
     handleValueChange(e){
         //console.dir(e.target.value);
-        if(e.target.value>=0 && e.target.value<=100)
+        let regEx = new RegExp("0*(?:[1-9][0-9]?|100)$");
+        let targetString = e.target.value ? e.target.value.toString() : '';
+        let regExRsult = regEx.exec(targetString);
+        console.log(targetString);
+        if(regExRsult && regExRsult[0] === targetString && targetString !== "")
         {
             this.setState({value: e.target.value, valueWarn:false});
         }
@@ -48,10 +52,6 @@ export default class Form extends React.Component{
         {
             this.setState({value: "0", valueWarn:true});
         }
-    }
-
-    checkValueErrors(){
-
     }
 
     showValueErrors(){
@@ -166,7 +166,7 @@ export default class Form extends React.Component{
                                min={0}
                                max={100}
                                ref="valueField"
-                               type="number"
+                               type="text"
                                data-tip='custom show'/>
                         {valueWarn}
                     </div>
