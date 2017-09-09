@@ -21,7 +21,6 @@
     position: fixed;
     top: 34vh;
     right: 0px;
-    z-index: -1;
     box-shadow: 0 0 13px -3px rgba(179,179,179,0.48);
     padding: 20px 0;
 }

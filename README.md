@@ -14,7 +14,7 @@ ___
 
 Project is live [here](https://arorayash.github.io/react-form).
 
-Demo Screenshot -
+Demo Screenshots -
 
 ![demo page](https://dl.dropboxusercontent.com/s/s7ukn2nnvj8mxzl/Screen%20Shot%202017-09-09%20at%209.03.18%20AM.png?dl=0)
 
