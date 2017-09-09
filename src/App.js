@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Form from "./Components/Form.js";
-import {Title, Profiles} from "./Components/UtilityBar";
+import {Title, Profiles, ResponsiveOverlay} from "./Components/UtilityBar";
 
 import './App.css';
 
@@ -13,9 +13,12 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Title/>
-                <Form/>
-                <Profiles/>
+                <ResponsiveOverlay/>
+                <div className="main-app">
+                    <Title/>
+                    <Form/>
+                    <Profiles/>
+                </div>
             </div>
         );
     }

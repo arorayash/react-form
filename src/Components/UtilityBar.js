@@ -30,3 +30,15 @@ export function Profiles() {
         </div>
     )
 }
+
+export function ResponsiveOverlay() {
+    return (
+        <div className="small-screen-overlay">
+            <h3 className="small-screen-text">
+                <span>Hey!</span> <br/>
+                The site is best-suited for higher resolutions. <br/>
+                Please resize your browser window.
+            </h3>
+        </div>
+    )
+}

@@ -44,3 +44,29 @@ a{
 a:hover, a:visited{
     text-decoration: none;
 }
+
+
+.small-screen-overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    background: transparent;
+    display: none;
+}
+
+.small-screen-text{
+    margin: 0 auto;
+    padding: 40vh 0;
+    color: #1a1a1a;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 900px){
+    .main-app{
+        filter: blur(15px);
+    }
+    .small-screen-overlay{
+        display: block;
+    }
+}
